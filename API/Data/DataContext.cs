@@ -1,14 +1,15 @@
-using Microsoft.EntityFrameworkCore;
 using API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
 {
-    public class DataContext : DbContext // heranã é :
+    public class DataContext : DbContext // herença usa :
     {
-        //construtor
-        public DataContext(DbContextOptions<DataContext> options) : base (options){}
-        //lista de propriedades que vão virar tabelas no banco
-        public DbSet<Produto> TabelaProduto { get; set;} // smp usa o DB e o obj q ele quer
+        // Construtor
+        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+
+        //Lista de propriedades que vão virar tabelas no banco
+        public DbSet<Produto> Produtos { get; set; } //smp usa Db e o obj que ele quer
 
     }
 }
