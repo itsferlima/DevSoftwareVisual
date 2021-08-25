@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using API.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace API
 {
@@ -26,6 +28,9 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DataContext(
+                options => options.UseInMemoryDataBase("database")
+            );
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

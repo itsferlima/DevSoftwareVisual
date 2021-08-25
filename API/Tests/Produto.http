@@ -1,2 +1,8 @@
 ###
-POST http://
+POST https://localhost:5001/api/produto/create
+Content-Type: application/json
+
+{
+    "Nome" : "Bolacha",
+    "Preco" : 3.5
+}
