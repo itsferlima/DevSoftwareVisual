@@ -11,21 +11,23 @@ namespace API.Controllers
     [Route("api/produto")]// rota de api expecificando 
     public class ProdutoController : ControllerBase
     {
+        private readonly DataContext _context; //variavel global apenas leitura 
+
         public ProdutoController(DataContext context)
         {
-            
+            _context = context;
         }
-        private DataContext context = new DataContext();
+        
         //POST: api/produto/create
         [HttpPost]
         [Route("create")]
-
         public Produto Create(Produto produto)
         {
-            context.Produtos.Add(produto);
-            Console.WriteLine(produto);
-            produto.Nome += "Alterado";
+            _context.TabelaProduto.Add(produto);
             return produto;
         }
+        [HttpGet]
+        [Route("list")]
+        public List<Produto> List() =>_context.Produto.Tolist();
     }
 }

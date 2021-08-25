@@ -6,3 +6,6 @@ Content-Type: application/json
     "Nome" : "Bolacha",
     "Preco" : 3.5
 }
+
+###
+GET https://localhost:5001/api/produto/list
