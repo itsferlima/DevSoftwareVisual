@@ -14,6 +14,6 @@ namespace API.Models
         public DateTime CriadoEm { get; set; }
 
         public override string ToString() =>
-            $"Nome: {Nome} | Preço: {Preco.ToString("C2")} | Criado em: {CriadoEm}";
+            $"Nome: {Nome} | Preço: {Preco.ToString("C2")} | Criado em: {CriadoEm} | ID : {Id}";
     }
 }

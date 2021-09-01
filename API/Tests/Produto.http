@@ -1,11 +1,28 @@
-###
+###Cadastrar produtos
 POST https://localhost:5001/api/produto/create
 Content-Type: application/json
 
 {
-    "Nome" : "Bolacha",
-    "Preco" : 3.5
+    "Nome" : "Uva",
+    "Preco" : 2,
+    "Descricao" : "doce"
 }
 
-###
+###listar todos os produtos
 GET https://localhost:5001/api/produto/list
+
+###buscar produto pela id
+GET https://localhost:5001/api/produto/getbyid/2
+
+### deletar produto pelo nome
+GET https://localhost:5001/api/produto/delete/uva
+
+###Alterar um produto
+PUT https://localhost:5001/api/produto/update
+Content-Type: application/json
+
+{
+    "Id" : 1,
+    "Nome": "Bala alterada",
+    "Preco": 2.0
+}
